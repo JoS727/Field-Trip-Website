@@ -1,0 +1,43 @@
+@import "tailwindcss";
+
+:root {
+  --background: #F4EDE0;
+  --foreground: #1C1C1C;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Field Trip Crew Brand Colors */
+  --color-cream: #F4EDE0;
+  --color-amber: #E07A2F;
+  --color-amber-light: #F5A956;
+  --color-forest: #2A4A1A;
+  --color-forest-light: #3D6B28;
+  --color-sage: #7BA05B;
+  --color-butter: #F5D67A;
+  --color-dust: #C4956A;
+  --color-charcoal: #1C1C1C;
+  --color-muted: #8B7355;
+  --color-surface: #FFFBF4;
+  --color-border: #D4C4A8;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Space Grotesk', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Display font utility class */
+.font-display {
+  font-family: 'Bebas Neue', 'Impact', 'Arial Narrow', sans-serif;
+  letter-spacing: 0.05em;
+}
+
+/* Stamp border effect */
+.stamp-border {
+  border: 3px dashed var(--color-amber);
+  position: relative;
+}
