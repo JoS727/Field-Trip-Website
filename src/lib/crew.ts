@@ -1,0 +1,128 @@
+import type { Member, Release } from "@/types";
+
+export const members: Member[] = [
+  {
+    id: "kai",
+    name: "Kai",
+    role: "Producer / DJ",
+    bio: "Kai is the sonic architect of Field Trip Crew. His production spans lo-fi hip-hop, house, and everything in between — always warm, always moving.",
+    image: "/images/members/kai.jpg",
+    links: {
+      instagram: "https://instagram.com",
+      soundcloud: "https://soundcloud.com",
+    },
+  },
+  {
+    id: "maya",
+    name: "Maya",
+    role: "MC / Vocalist",
+    bio: "Maya's words hit like a polaroid in the sun. Raw storytelling, melodic hooks, and a stage presence you won't forget.",
+    image: "/images/members/maya.jpg",
+    links: {
+      instagram: "https://instagram.com",
+      spotify: "https://spotify.com",
+    },
+  },
+  {
+    id: "leon",
+    name: "León",
+    role: "Guitarist / Multi-Instrumentalist",
+    bio: "León weaves live instrumentation into the mix — guitar, keys, percussion. Every show with León is something you can't stream.",
+    image: "/images/members/leon.jpg",
+    links: {
+      instagram: "https://instagram.com",
+      soundcloud: "https://soundcloud.com",
+    },
+  },
+  {
+    id: "dani",
+    name: "Dani",
+    role: "Visual Director / Art",
+    bio: "Dani shapes how Field Trip Crew looks and feels. Every piece of merch, every flyer, every set design carries her vision.",
+    image: "/images/members/dani.jpg",
+    links: {
+      instagram: "https://instagram.com",
+    },
+  },
+  {
+    id: "remy",
+    name: "Remy",
+    role: "DJ / A&R",
+    bio: "Remy keeps the ears open and the dance floor full. As A&R he connects the crew with new voices and new sounds.",
+    image: "/images/members/remy.jpg",
+    links: {
+      instagram: "https://instagram.com",
+      soundcloud: "https://soundcloud.com",
+    },
+  },
+  {
+    id: "simone",
+    name: "Simone",
+    role: "Community & Events",
+    bio: "Simone builds the space for Field Trip Crew to come alive. From intimate pop-ups to packed shows, she makes every event feel like home.",
+    image: "/images/members/simone.jpg",
+    links: {
+      instagram: "https://instagram.com",
+    },
+  },
+];
+
+export const releases: Release[] = [
+  {
+    id: "vol2",
+    title: "Field Recordings Vol. 2",
+    artist: "Field Trip Crew",
+    year: "2025",
+    type: "EP",
+    image: "/images/music/vol2.jpg",
+    spotifyUrl: "https://spotify.com",
+    appleMusicUrl: "https://music.apple.com",
+    soundcloudUrl: "https://soundcloud.com",
+    featured: true,
+  },
+  {
+    id: "departure",
+    title: "Departure",
+    artist: "Kai ft. Maya",
+    year: "2025",
+    type: "Single",
+    image: "/images/music/departure.jpg",
+    spotifyUrl: "https://spotify.com",
+    appleMusicUrl: "https://music.apple.com",
+    soundcloudUrl: "https://soundcloud.com",
+    featured: true,
+  },
+  {
+    id: "vol1",
+    title: "Field Recordings Vol. 1",
+    artist: "Field Trip Crew",
+    year: "2024",
+    type: "Mixtape",
+    image: "/images/music/vol1.jpg",
+    spotifyUrl: "https://spotify.com",
+    appleMusicUrl: "https://music.apple.com",
+    soundcloudUrl: "https://soundcloud.com",
+    featured: true,
+  },
+  {
+    id: "golden-hour",
+    title: "Golden Hour",
+    artist: "León & Remy",
+    year: "2024",
+    type: "EP",
+    image: "/images/music/golden-hour.jpg",
+    spotifyUrl: "https://spotify.com",
+    soundcloudUrl: "https://soundcloud.com",
+  },
+  {
+    id: "road-home",
+    title: "Road Home",
+    artist: "Maya",
+    year: "2024",
+    type: "Single",
+    image: "/images/music/road-home.jpg",
+    spotifyUrl: "https://spotify.com",
+    appleMusicUrl: "https://music.apple.com",
+    soundcloudUrl: "https://soundcloud.com",
+  },
+];
