@@ -1,0 +1,375 @@
+:root {
+  --bg: #f7f3ee;
+  --bg-soft: #fffdf9;
+  --surface: rgba(255, 255, 255, 0.78);
+  --text: #13304c;
+  --muted: #5a6f81;
+  --navy: #0d2b45;
+  --lake: #a6c6da;
+  --orange: #e26b2c;
+  --border: rgba(13, 43, 69, 0.12);
+  --shadow: 0 30px 80px rgba(13, 43, 69, 0.12);
+  font-family: Inter, system-ui, sans-serif;
+  color: var(--text);
+  background: var(--bg);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background:
+    radial-gradient(circle at top left, rgba(226, 107, 44, 0.12), transparent 30%),
+    linear-gradient(180deg, #fffdf9 0%, #f7f3ee 100%);
+  color: var(--text);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.container {
+  width: min(1120px, calc(100% - 2rem));
+  margin: 0 auto;
+}
+
+.site-shell {
+  padding-bottom: 4rem;
+}
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  backdrop-filter: blur(18px);
+  background: rgba(247, 243, 238, 0.78);
+  border-bottom: 1px solid rgba(13, 43, 69, 0.06);
+}
+
+.topbar__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.brand {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand__eyebrow,
+.eyebrow {
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  font-size: 0.72rem;
+  color: var(--orange);
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.brand__name {
+  font-family: Georgia, 'Times New Roman', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.2em;
+  font-size: 1.5rem;
+}
+
+.nav {
+  display: flex;
+  gap: 1.2rem;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.nav a:hover {
+  color: var(--navy);
+}
+
+.hero {
+  padding: 5rem 0 3rem;
+}
+
+.hero__grid {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.hero h1,
+.section h2 {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: var(--navy);
+  line-height: 0.96;
+  letter-spacing: -0.04em;
+}
+
+.hero h1 {
+  font-size: clamp(3.4rem, 7vw, 6.3rem);
+  margin: 0;
+  max-width: 10ch;
+}
+
+.hero__lede,
+.section p,
+.card p,
+.testimonial p,
+.moment-list li {
+  color: var(--muted);
+  line-height: 1.8;
+  font-size: 1.02rem;
+}
+
+.hero__lede {
+  max-width: 60ch;
+  margin: 1.5rem 0 0;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.button {
+  border-radius: 999px;
+  padding: 0.95rem 1.4rem;
+  font-weight: 600;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.button:hover {
+  transform: translateY(-1px);
+}
+
+.button--primary {
+  background: var(--navy);
+  color: white;
+  box-shadow: 0 16px 40px rgba(13, 43, 69, 0.2);
+}
+
+.button--ghost {
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.button--wide {
+  width: 100%;
+}
+
+.hero-card {
+  position: relative;
+  padding: 2rem;
+  border-radius: 32px;
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(255,255,255,0.65));
+  border: 1px solid rgba(13, 43, 69, 0.08);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  min-height: 520px;
+}
+
+.hero-card__badge {
+  font-family: Georgia, 'Times New Roman', serif;
+  text-transform: uppercase;
+  letter-spacing: 0.24em;
+  font-size: 1.2rem;
+}
+
+.hero-card__sun {
+  position: absolute;
+  top: 5.25rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 84px;
+  height: 84px;
+  border-radius: 50%;
+  background: var(--orange);
+  box-shadow: 0 0 0 10px rgba(226, 107, 44, 0.12);
+}
+
+.hero-card__scene {
+  position: absolute;
+  inset: 8rem 1.5rem 5rem;
+  border-radius: 28px;
+  border: 3px solid var(--navy);
+  background: linear-gradient(180deg, rgba(255,255,255,0.92), rgba(166,198,218,0.12));
+  overflow: hidden;
+}
+
+.hero-card__mountains {
+  position: absolute;
+  inset: 22% 0 auto;
+  height: 33%;
+  background: linear-gradient(135deg, #173a58 0 20%, transparent 20%),
+    linear-gradient(225deg, #476989 0 18%, transparent 18%),
+    linear-gradient(160deg, #86acc8 0 22%, transparent 22%),
+    linear-gradient(200deg, #173a58 0 26%, transparent 26%);
+  background-size: 36% 100%, 42% 100%, 38% 100%, 40% 100%;
+  background-repeat: no-repeat;
+  background-position: 0 100%, 30% 100%, 62% 100%, 100% 100%;
+}
+
+.hero-card__water {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 42%;
+  background: repeating-linear-gradient(
+    180deg,
+    rgba(121, 169, 209, 0.24),
+    rgba(121, 169, 209, 0.24) 10px,
+    rgba(255,255,255,0.9) 10px,
+    rgba(255,255,255,0.9) 22px
+  );
+}
+
+.hero-card__caption {
+  position: absolute;
+  left: 2rem;
+  right: 2rem;
+  bottom: 1.8rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.section {
+  padding: 4.5rem 0;
+}
+
+.section--soft {
+  background: rgba(255,255,255,0.5);
+}
+
+.section--accent {
+  background: linear-gradient(135deg, #0d2b45, #153b5e);
+  color: white;
+}
+
+.section--accent h2,
+.eyebrow--light,
+.section--accent .moment-list li {
+  color: white;
+}
+
+.intro-grid,
+.cta-panel,
+.split-panel {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2rem;
+  align-items: start;
+}
+
+.cards,
+.testimonials {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 2rem;
+}
+
+.card,
+.testimonial,
+.cta-card {
+  border-radius: 26px;
+  padding: 1.6rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.card__icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  background: radial-gradient(circle at 30% 30%, var(--orange), #f2a171);
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin: 0 0 0.75rem;
+  font-size: 1.35rem;
+  color: var(--navy);
+}
+
+.moment-list {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0 0;
+  display: grid;
+  gap: 1rem;
+}
+
+.moment-list li {
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 18px;
+  background: rgba(255,255,255,0.06);
+}
+
+.testimonial footer {
+  margin-top: 1rem;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.cta-card {
+  display: grid;
+  gap: 1rem;
+  align-content: start;
+}
+
+@media (max-width: 900px) {
+  .hero__grid,
+  .intro-grid,
+  .cta-panel,
+  .split-panel,
+  .cards,
+  .testimonials {
+    grid-template-columns: 1fr;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .hero-card {
+    min-height: 420px;
+  }
+}
+
+@media (max-width: 640px) {
+  .hero {
+    padding-top: 3rem;
+  }
+
+  .hero h1 {
+    font-size: clamp(2.7rem, 14vw, 4.4rem);
+  }
+
+  .hero__actions {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  .topbar__inner {
+    padding: 0.85rem 0;
+  }
+}
