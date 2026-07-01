@@ -85,13 +85,62 @@ a {
 
 .nav {
   display: flex;
-  gap: 1.2rem;
+  gap: 0.7rem;
   color: var(--muted);
   font-size: 0.95rem;
+  align-items: center;
 }
 
-.nav a:hover {
+.nav__link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 40px;
+  padding: 0 0.95rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.3);
+  transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.nav__link--cta {
+  background: var(--navy);
+  color: white;
+  border-color: transparent;
+}
+
+.nav__link--cta:hover {
+  background: #163b5d;
+  color: white;
+}
+
+.nav__link:hover {
   color: var(--navy);
+  background: rgba(255, 255, 255, 0.72);
+  border-color: rgba(13, 43, 69, 0.08);
+}
+
+.menu-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.6);
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 4px;
+  padding: 0;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--navy);
+  display: block;
 }
 
 .hero {
@@ -343,12 +392,71 @@ a {
     grid-template-columns: 1fr;
   }
 
+  .topbar__inner {
+    flex-wrap: wrap;
+    align-items: center;
+  }
+
+  .brand {
+    min-width: 0;
+    flex: 1;
+  }
+
+  .brand__eyebrow {
+    margin-bottom: 0.35rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.18em;
+  }
+
+  .brand__name {
+    font-size: 1.18rem;
+    letter-spacing: 0.12em;
+  }
+
+  .menu-toggle {
+    display: inline-flex;
+    flex: 0 0 auto;
+  }
+
   .nav {
     display: none;
+    width: 100%;
+    flex-direction: column;
+    gap: 0.35rem;
+    padding-top: 0.75rem;
+  }
+
+  .nav.nav--open {
+    display: flex;
+  }
+
+  .nav__link {
+    width: 100%;
+    justify-content: flex-start;
+    padding: 0.85rem 0.2rem;
+    min-height: 0;
+    border-radius: 0;
+    border: 0;
+    border-top: 1px solid rgba(13, 43, 69, 0.08);
+    background: transparent;
+  }
+
+  .nav__link--cta {
+    justify-content: center;
+    margin-top: 0.35rem;
+    border-radius: 999px;
+    background: var(--navy);
+    border: 0;
   }
 
   .hero-card {
     min-height: 420px;
+  }
+}
+
+@media (min-width: 901px) {
+  .menu-toggle {
+    display: none;
   }
 }
 
@@ -370,6 +478,11 @@ a {
   }
 
   .topbar__inner {
-    padding: 0.85rem 0;
+    padding: 0.8rem 0;
+    gap: 0.75rem;
+  }
+
+  .container {
+    width: min(1120px, calc(100% - 1.25rem));
   }
 }

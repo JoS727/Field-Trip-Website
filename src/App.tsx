@@ -1,3 +1,5 @@
+import { useState } from 'react';
+
 const offerings = [
   {
     title: 'Water Adventures',
@@ -37,6 +39,19 @@ const testimonials = [
 ];
 
 export function App() {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const navItems = [
+    { href: './index.html', label: 'Home' },
+    { href: './about.html', label: 'About' },
+    { href: './schedule.html', label: 'Schedule' },
+    { href: './faqs.html', label: 'FAQs' },
+    { href: './contact.html', label: 'Contact' },
+    { href: './pricing.html', label: 'Pricing' },
+  ];
+
+  const handleNavClick = () => setIsMenuOpen(false);
+
   return (
     <div className="site-shell">
       <header className="topbar">
@@ -45,11 +60,28 @@ export function App() {
             <span className="brand__eyebrow">Wellness • Adventure • Connection</span>
             <span className="brand__name">Field Trip</span>
           </div>
-          <nav className="nav">
-            <a href="#about">About</a>
-            <a href="#offerings">Offerings</a>
-            <a href="#testimonials">Reviews</a>
-            <a href="#contact">Contact</a>
+
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-expanded={isMenuOpen}
+            aria-controls="site-navigation"
+            aria-label="Toggle navigation menu"
+            onClick={() => setIsMenuOpen((open) => !open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+
+          <nav
+            id="site-navigation"
+            className={`nav ${isMenuOpen ? 'nav--open' : ''}`}
+          >
+            {navItems.map((item) => (
+              <a key={item.href} className="nav__link" href={item.href} onClick={handleNavClick}>{item.label}</a>
+            ))}
+            <a className="nav__link nav__link--cta" href="./contact.html" onClick={handleNavClick}>Book Now</a>
           </nav>
         </div>
       </header>
@@ -61,7 +93,7 @@ export function App() {
               <span className="eyebrow">Amplify your nature</span>
               <h1>Outdoor wellness with a crisp, coastal-adventure soul.</h1>
               <p className="hero__lede">
-                Field Trip creates feel-good experiences that blend water, movement, fresh air, and actual connection — for people who want something a little more alive than a typical class or meetup.
+                Field Trip creates feel-good experiences that blend water, movement, fresh air, and actual connection - for people who want something a little more alive than a typical class or meetup.
               </p>
               <div className="hero__actions">
                 <a className="button button--primary" href="#contact">Plan a Field Trip</a>
