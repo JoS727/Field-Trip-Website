@@ -58,8 +58,8 @@ img { max-width: 100%; display: block; }
 .brand__copy { display: flex; flex-direction: column; line-height: 1.02; }
 .brand__name { font-family: Georgia, 'Times New Roman', serif; text-transform: uppercase; letter-spacing: 0.12em; font-size: 1.45rem; color: var(--navy); }
 .brand__tag { font-family: Inter, system-ui, sans-serif; text-transform: uppercase; letter-spacing: 0.18em; font-size: 0.78rem; color: var(--amber); margin-top: 0.28rem; }
-.menu-toggle { display: none; width: 48px; height: 48px; min-width: 48px; min-height: 48px; border: 1px solid rgba(21,50,77,0.16); border-radius: 999px; background: rgba(255,255,255,0.96); align-items: center; justify-content: center; flex-direction: column; gap: 5px; padding: 0; cursor: pointer; -webkit-appearance: none; appearance: none; box-shadow: 0 10px 24px rgba(21,50,77,0.12); position: relative; z-index: 60; flex: 0 0 auto; }
-.menu-toggle span { width: 20px; height: 2px; border-radius: 999px; background: var(--navy); display: block; }
+.menu-toggle { display: none; }
+.menu-toggle span { display: none; }
 .nav { display: flex; align-items: center; gap: 0.75rem; color: var(--muted); font-size: 0.95rem; flex-wrap: wrap; }
 .nav__link { display: inline-flex; align-items: center; justify-content: center; min-height: 40px; padding: 0 0.95rem; border-radius: 999px; border: 1px solid transparent; background: rgba(255,255,255,0.34); transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease; }
 .nav__link:hover { color: var(--navy); background: rgba(255,255,255,0.82); border-color: rgba(21,50,77,0.08); }
@@ -141,14 +141,13 @@ img { max-width: 100%; display: block; }
 .footer__bottom { border-top: 1px solid rgba(255,255,255,0.12); margin-top: 2.5rem; padding-top: 1.2rem; display: flex; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
 @media (max-width: 900px) {
   .intro-grid, .cta-panel, .split-panel, .cards, .testimonials, .footer__grid, .seo-grid, .seo-cards, .photo-feature, .image-row, .page-grid, .contact-grid, .faq-grid { grid-template-columns: 1fr; }
-  .topbar__inner { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; column-gap: 0.75rem; row-gap: 0.5rem; }
+  .topbar__inner { display: grid; grid-template-columns: 1fr; align-items: start; row-gap: 0.75rem; }
   .brand { min-width: 0; }
   .brand__copy { min-width: 0; }
   .brand__name { font-size: 1.18rem; letter-spacing: 0.1em; }
   .brand__tag { font-size: 0.64rem; letter-spacing: 0.14em; }
-  .menu-toggle { display: inline-flex !important; justify-self: end; align-self: center; }
-  .nav { display: none; width: 100%; grid-column: 1 / -1; flex-direction: column; gap: 0.35rem; padding-top: 0.75rem; }
-  .nav.nav--open { display: flex; }
+  .menu-toggle { display: none !important; }
+  .nav { display: flex !important; width: 100%; flex-direction: column; gap: 0.35rem; padding-top: 0.25rem; }
   .nav__link { width: 100%; justify-content: flex-start; padding: 0.95rem 0.2rem; min-height: 0; border-radius: 0; border: 0; border-top: 1px solid rgba(21,50,77,0.08); background: transparent; }
   .nav__cta { justify-content: center; margin-top: 0.35rem; border-radius: 999px; border: 0; }
   .hero__image-wrap { min-height: 74svh; }
@@ -213,27 +212,7 @@ const footer = `
   </div>
 </footer>`;
 
-const navScript = `<script>
-(() => {
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('#site-navigation');
-  if (!toggle || !nav) return;
-  const closeMenu = () => {
-    nav.classList.remove('nav--open');
-    toggle.setAttribute('aria-expanded', 'false');
-  };
-  toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('nav--open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-  });
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', closeMenu);
-  });
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) closeMenu();
-  });
-})();
-</script>`;
+const navScript = ``;
 
 const wrap = (title, description, body, path = '') => `<!doctype html><html lang="en"><head>${sharedHead(title, description, path)}</head><body><div class="site-shell">${nav}${body}${footer}</div>${navScript}</body></html>`;
 

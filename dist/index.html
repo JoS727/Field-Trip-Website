@@ -141,24 +141,4 @@
     </div>
     <div class="footer__bottom"><p class="footer__small">© 2026 Field Trip. All rights reserved.</p><p class="footer__small">San Diego outdoor wellness, scenic group experiences, and private adventure gatherings.</p></div>
   </div>
-</footer></div><script>
-(() => {
-  const toggle = document.querySelector('.menu-toggle');
-  const nav = document.querySelector('#site-navigation');
-  if (!toggle || !nav) return;
-  const closeMenu = () => {
-    nav.classList.remove('nav--open');
-    toggle.setAttribute('aria-expanded', 'false');
-  };
-  toggle.addEventListener('click', () => {
-    const isOpen = nav.classList.toggle('nav--open');
-    toggle.setAttribute('aria-expanded', String(isOpen));
-  });
-  nav.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', closeMenu);
-  });
-  window.addEventListener('resize', () => {
-    if (window.innerWidth > 900) closeMenu();
-  });
-})();
-</script></body></html>
+</footer></div></body></html>
