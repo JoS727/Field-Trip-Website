@@ -1,0 +1,78 @@
+<!doctype html><html lang="en"><head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Schedule | Field Trip</title>
+    <meta name="description" content="Field Trip schedule, tours, and paddle offerings in San Diego." />
+    <meta name="robots" content="index,follow" />
+    <meta property="og:title" content="Schedule | Field Trip" />
+    <meta property="og:description" content="Field Trip schedule, tours, and paddle offerings in San Diego." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jos727.github.io/Field-Trip-Website/schedule.html" />
+    <meta property="og:image" content="https://jos727.github.io/Field-Trip-Website/live/hero.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Schedule | Field Trip" />
+    <meta name="twitter:description" content="Field Trip schedule, tours, and paddle offerings in San Diego." />
+    <meta name="twitter:image" content="https://jos727.github.io/Field-Trip-Website/live/hero.jpg" />
+    <link rel="canonical" href="https://jos727.github.io/Field-Trip-Website/schedule.html" />
+    <link rel="stylesheet" crossorigin href="./assets/app.css" />
+</head><body><div class="site-shell">
+<header class="topbar">
+  <div class="container topbar__inner">
+    <a class="brand" href="./index.html">
+      <span class="brand__mark-wrap"><img class="brand__mark" src="./assets/ft-primary-logo.jpg" alt="Field Trip logo mark" /></span>
+      <div class="brand__copy">
+        <span class="brand__name">Field Trip</span>
+        <span class="brand__tag">Amplify your Nature</span>
+      </div>
+    </a>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-navigation" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="site-navigation" class="nav">
+      <a href="./index.html" class="nav__link">Home</a>
+      <a href="./about.html" class="nav__link">About</a>
+      <a href="./schedule.html" class="nav__link">Schedule</a>
+      <a href="./faqs.html" class="nav__link">FAQs</a>
+      <a href="./contact.html" class="nav__link">Contact</a>
+      <a href="./pricing.html" class="nav__link">Pricing</a>
+      <a href="./contact.html" class="nav__link nav__cta">Book Now</a>
+    </nav>
+  </div>
+</header>
+<main>
+  <section class="page-hero"><div class="container"><div class="page-hero__card"><span class="eyebrow" style="color: var(--amber); text-shadow: none;">Field Trip</span><h1>Schedule</h1><p>Our favorite and most popular are our Sunset Tours to the sealions. We also offer Glassy Morning Tours, Full Moon/Night Tours, and Bar Paddles.</p></div></div></section>
+  <section class="section"><div class="container page-grid"><div class="page-card"><h3>Tours + paddles</h3><p>Most are 90 minutes in length starting with a lesson on shore, then we hit the water.</p><p>Paddleboard rentals start at 60 minutes and can be as long as a weekend.</p></div><div class="page-card"><h3>Partners + add-ons</h3><p>We also have partners on the water and can steer you in the right direction for surf lessons, snorkel tours, and more.</p><a class="button button--navy" href="./contact.html">Ask about availability</a></div></div></section>
+</main>
+
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand"><div class="footer__brand-row"><span class="footer__mark"><img src="./assets/ft-primary-logo.jpg" alt="Field Trip logo mark" /></span><span class="footer__title">Field Trip</span></div><p class="footer__copy">Fitness and tours on the water, collaborations in San Diego and beyond.</p></div>
+      <div><h3>Navigate</h3><ul><li><a href="./about.html">About</a></li><li><a href="./schedule.html">Schedule</a></li><li><a href="./faqs.html">FAQs</a></li><li><a href="./contact.html">Contact</a></li></ul></div>
+      <div><h3>Support</h3><ul><li><a href="./privacy-policy.html">Privacy Policy</a></li><li><a href="./terms-and-conditions.html">Terms and Conditions</a></li><li><a href="https://www.fieldtripcrew.com/" target="_blank" rel="noreferrer">Live Site</a></li></ul></div>
+    </div>
+    <div class="footer__bottom"><p class="footer__small">© 2026 Field Trip. All rights reserved.</p><p class="footer__small">San Diego outdoor wellness, scenic group experiences, and private adventure gatherings.</p></div>
+  </div>
+</footer></div><script>
+(() => {
+  const toggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('#site-navigation');
+  if (!toggle || !nav) return;
+  const closeMenu = () => {
+    nav.classList.remove('nav--open');
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+  toggle.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('nav--open');
+    toggle.setAttribute('aria-expanded', String(isOpen));
+  });
+  nav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+  window.addEventListener('resize', () => {
+    if (window.innerWidth > 900) closeMenu();
+  });
+})();
+</script></body></html>
