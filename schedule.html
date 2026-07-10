@@ -25,14 +25,19 @@
         <span class="brand__tag">Amplify your Nature</span>
       </div>
     </a>
-    <nav class="nav">
-      <a href="./index.html">Home</a>
-      <a href="./about.html">About</a>
-      <a href="./schedule.html">Schedule</a>
-      <a href="./faqs.html">FAQs</a>
-      <a href="./contact.html">Contact</a>
-      <a href="./pricing.html">Pricing</a>
-      <a href="./contact.html" class="nav__cta">Book Now</a>
+    <button type="button" class="menu-toggle" aria-expanded="false" aria-controls="site-navigation" aria-label="Toggle navigation menu">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <nav id="site-navigation" class="nav">
+      <a href="./index.html" class="nav__link">Home</a>
+      <a href="./about.html" class="nav__link">About</a>
+      <a href="./schedule.html" class="nav__link">Schedule</a>
+      <a href="./faqs.html" class="nav__link">FAQs</a>
+      <a href="./contact.html" class="nav__link">Contact</a>
+      <a href="./pricing.html" class="nav__link">Pricing</a>
+      <a href="./contact.html" class="nav__link nav__cta">Book Now</a>
     </nav>
   </div>
 </header>
@@ -50,4 +55,30 @@
     </div>
     <div class="footer__bottom"><p class="footer__small">© 2026 Field Trip. All rights reserved.</p><p class="footer__small">San Diego outdoor wellness, scenic group experiences, and private adventure gatherings.</p></div>
   </div>
-</footer></div></body></html>
+</footer></div>
+<script>
+  (() => {
+    const toggle = document.querySelector('.menu-toggle');
+    const nav = document.getElementById('site-navigation');
+    if (!toggle || !nav) return;
+
+    const closeMenu = () => {
+      toggle.setAttribute('aria-expanded', 'false');
+      nav.classList.remove('nav--open');
+    };
+
+    toggle.addEventListener('click', () => {
+      const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      toggle.setAttribute('aria-expanded', String(!isOpen));
+      nav.classList.toggle('nav--open', !isOpen);
+    });
+
+    nav.querySelectorAll('a').forEach((link) => {
+      link.addEventListener('click', closeMenu);
+    });
+
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 900) closeMenu();
+    });
+  })();
+</script></body></html>
