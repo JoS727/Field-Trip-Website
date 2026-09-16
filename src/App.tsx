@@ -48,6 +48,7 @@ export function App() {
     { href: './faqs.html', label: 'FAQs' },
     { href: './contact.html', label: 'Contact' },
     { href: './pricing.html', label: 'Pricing' },
+    { href: './merch.html', label: 'Merch' },
   ];
 
   const handleNavClick = () => setIsMenuOpen(false);
