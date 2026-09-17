@@ -3,6 +3,7 @@ import { useMemo, useState } from 'react';
 /* ── Data ─────────────────────────────────────────────────────────────── */
 
 const DESIGNS = [
+  { id: 'badge', name: 'The Badge', art: './designs/field-trip-badge.png', blurb: 'The Field Trip mark — amplify your nature.' },
   { id: 'warrior-two', name: 'Warrior Two', art: './designs/warrior-two.jpg', blurb: 'Two on the water, arms wide, pier behind.' },
   { id: 'chill', name: 'Chill', art: './designs/chill.jpg', blurb: 'Board, phone, golden hour. The whole vibe.' },
   { id: 'kneeling', name: 'Kneel', art: './designs/kneeling.jpg', blurb: 'Grounded and lit warm. Quiet strength.' },
